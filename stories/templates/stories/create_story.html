@@ -1,0 +1,13 @@
+{% extends '<myproject>base.html' %}
+
+{% block title %}Create Story{% endblock %}
+
+{% block content %}
+    <h2>Create Story</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ story_form.as_p }}
+        {{ multimedia_form.as_p }}
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+{% endblock %}
